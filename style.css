@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --error: hsl(0, 100%, 66%);
+    --gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --white: hsl(0, 0%, 100%);
+    --card-back: hsl(270, 3%, 87%);
+    --primary-color: hsl(279, 6%, 55%);
+    --dark-violet: hsl(278, 68%, 11%);
+}
+
+body{
+    font-size: 18px;
+    
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
