@@ -15,7 +15,8 @@ const bgYy = document.getElementById('card-front-exp-yy');
 const bgCvc = document.getElementById('card-back-cvc');
 
 const errorCnum = document.getElementById('cnum-error');
-const errorExp = document.getElementById('exp-error');
+const errorExpmm = document.getElementById('expmm-error');
+const errorExpyy = document.getElementById('expyy-error');
 const errorCvc = document.getElementById('cvc-error');
 
 
@@ -82,9 +83,9 @@ expmm.addEventListener("keyup", (e) => {
     }
     
     
-    if (expmm.value == "00"){
-        expmm.value = "01"
-    }
+    // if (expmm.value == "00"){
+    //     expmm.value = "01"
+    // }
 })
 
 expyy.addEventListener("keyup", (e) => {
@@ -108,10 +109,46 @@ cvc.addEventListener("keyup", (e) => {
 // stop form submitting unless all criteria is met once all of it is met send to next page
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault()
+
+    if (chname.value == '' || chname.value == null) {
+        console.log('issue with the name')
+        e.preventDefault()
+    }
+    if (cnum.value.length < 16) {
+        console.log('cnum is too short')
+        e.preventDefault()
+    }
+    if (expmm.value.length < 2) {
+        console.log('expmm is too short')
+        e.preventDefault()
+    }
+    if (expmm.value == '00') {
+        console.log('expmm cannot be 00')
+        e.preventDefault()
+    }
+    if (expyy.value.length < 2) {
+        console.log('expyy is too short')
+        e.preventDefault()
+    }
+    if (expyy.value <= 21 ) {
+        console.log('card is expired')
+        e.preventDefault()
+    }
+    if (expyy.value == 22 && expmm.value <= 9){
+        console.log('card is expired')
+        e.preventDefault()
+    }
+    if (cvc.value.length < 3) {
+        console.log('cvc is too short')
+        e.preventDefault()
+    }
+
+    
 })
 
 //! Functions
+
+// functions for background card animation
 
 function chnameTextEdit () {
     bgName.innerText = chname.value
@@ -131,4 +168,26 @@ function expyyTextEdit () {
 
 function cvcTextEdit () {
     bgCvc.innerText = cvc.value
+}
+
+// functions for errors on submit
+
+// function chnameErrorEdit () {
+//     bgName.innerText = chname.value
+// }
+
+function cnumErrorEdit () {
+    errorCnum.innerText = cnum.value
+}
+
+function expmmErrorEdit () {
+    errorExpmm.innerText = expmm.value
+}
+
+function expyyErrorEdit () {
+    errorExpyy.innerText = expyy.value
+}
+
+function cvcErrorEdit () {
+    errorCvc.innerText = cvc.value
 }
