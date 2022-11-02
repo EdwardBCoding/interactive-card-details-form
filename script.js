@@ -110,36 +110,39 @@ cvc.addEventListener("keyup", (e) => {
 
 form.addEventListener("submit", (e) => {
 
+    let errors = []
+
     if (chname.value == '' || chname.value == null) {
-        console.log('issue with the name')
-        e.preventDefault()
+        errors.push('name required')
     }
     if (cnum.value.length < 16) {
-        console.log('cnum is too short')
-        e.preventDefault()
+        errors.push('card number incomplete')
     }
     if (expmm.value.length < 2) {
-        console.log('expmm is too short')
-        e.preventDefault()
+        errors.push('expiration month is too short')
     }
     if (expmm.value == '00') {
-        console.log('expmm cannot be 00')
-        e.preventDefault()
+        errors.push('expiration month can not be 00')
     }
     if (expyy.value.length < 2) {
-        console.log('expyy is too short')
-        e.preventDefault()
+        errors.push('expiration year is too short')
     }
-    if (expyy.value <= 21 ) {
-        console.log('card is expired')
-        e.preventDefault()
+    if (expyy.value <= 21 && expyy.value !== '' ) {
+        errors.push('card is expired')
     }
-    if (expyy.value == 22 && expmm.value <= 9){
-        console.log('card is expired')
-        e.preventDefault()
+    if (expyy.value == 22 && expmm.value <= 10){
+        errors.push('card expired earlier this year')
     }
     if (cvc.value.length < 3) {
-        console.log('cvc is too short')
+        errors.push('cvc is too short')
+    }
+    console.log(errors)
+    if (errors.length > 0) {
+        console.log('its fkd')
+        e.preventDefault()
+    }
+    if (errors.length == 0) {
+        console.log('dance youre good!')
         e.preventDefault()
     }
 
