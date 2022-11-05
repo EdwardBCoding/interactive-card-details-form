@@ -184,8 +184,11 @@ function submitSuccess() {
         console.log('ended');
         formContainer.classList.add('display-none');
         formContainer.classList.remove('disappear');
-        //TODO rest of the event for submit
+        confContainer.classList.remove('display-none');
+        confContainer.classList.add('reappear')
     });
+    
+    //TODO Confirmed page submit event to restart
 
 }
 

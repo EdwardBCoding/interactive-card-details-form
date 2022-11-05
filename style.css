@@ -73,7 +73,9 @@ main{
 }
 
 
-
+.confirmed{
+    opacity: 0;
+}
 
 .display-none{
     display: none;
@@ -90,6 +92,20 @@ main{
     100% {
         opacity: 0;
     }
+}
+
+.reappear{
+    animation: unvanish 0.5s ease-in 0.1s forwards;
+}
+
+@keyframes unvanish {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
 }
 
 /* .error-name{
