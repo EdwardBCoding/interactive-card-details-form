@@ -20,6 +20,9 @@ const errorExpmm = document.getElementById('expmm-error');
 const errorExpyy = document.getElementById('expyy-error');
 const errorCvc = document.getElementById('cvc-error');
 
+const formContainer = document.getElementById('form-container');
+const confContainer = document.getElementById('confirmed-container');
+
 
 //! Listeners
 
@@ -104,6 +107,7 @@ expyy.addEventListener("keyup", (e) => {
         if (expyy.value !== "card expired earlier this year" && expyy.value !== "card is expired"){
             errorExpyy.innerText = ""
             //! I WAS HERE
+            //TODO: Rest of the error removals
         }
     }
 })
@@ -175,6 +179,13 @@ function handleSubmit() {
 
 function submitSuccess() {
     console.log('dance youre good!')
+    formContainer.classList.add('disappear')
+    formContainer.addEventListener("animationend", () => {
+        console.log('ended');
+        formContainer.classList.add('display-none');
+        formContainer.classList.remove('disappear');
+        //TODO rest of the event for submit
+    });
 
 }
 

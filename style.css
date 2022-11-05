@@ -75,8 +75,21 @@ main{
 
 
 
-.confirmed{
+.display-none{
     display: none;
+}
+
+.disappear{
+    animation: vanish 1s ease-in 0.1s forwards;
+}
+
+@keyframes vanish {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* .error-name{
