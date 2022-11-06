@@ -20,6 +20,13 @@ body{
     height: 100vh;
     width: 100%;
     overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+aside{
+    height: 50%;
+    width: 100%;
 }
 
 .bg-gradient{
@@ -32,17 +39,6 @@ body{
 .bg-gradient img{
     width: 100%;
     height: 18rem;
-}
-
-@media (min-width:700px) {
-    .bg-gradient img{
-        width: 30%;
-        height: 100%;
-    }
-    aside{
-        height: 100%;
-        width: 50%;
-    }
 }
 
 .sidebar{
@@ -61,16 +57,28 @@ body{
     z-index: -3;
 }
 
-aside{
-    height: 50%;
-    width: 100%;
-}
-
 main{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
+
+@media (min-width:700px) {
+    body{
+        flex-direction: column;
+    }
+    .bg-gradient img{
+        width: 30%;
+        height: 100%;
+    }
+    aside{
+        width: 30%;
+    }
+}
+
+
+
 
 
 /* .confirmed{
