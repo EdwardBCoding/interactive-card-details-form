@@ -73,7 +73,13 @@ main{
 }
 
 
-.confirmed{
+/* .confirmed{
+    
+} */
+
+/*! utility classes */
+
+.opacity-none{
     opacity: 0;
 }
 

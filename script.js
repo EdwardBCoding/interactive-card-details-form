@@ -22,13 +22,24 @@ const errorCvc = document.getElementById('cvc-error');
 
 const formContainer = document.getElementById('form-container');
 const confContainer = document.getElementById('confirmed-container');
+const confBtn = document.getElementById('confirmed-btn');
+
+//! Constants
+
+const qual = /[0-9]/ ;
+
+const ogChname = "Winry Rockbell"
+const ogCnum = "0000 0000 0000 0000"
+const ogExpmm = "11"
+const ogExpyy = "69"
+const ogCvc = "456"
 
 
 //! Listeners
 
 // stop keydown of anything but digits and backspace
 
-const qual = /[0-9]/ ;
+
 
 cnum.addEventListener("keydown", (e) => {
     let key = e.key;
@@ -68,7 +79,7 @@ chname.addEventListener("keyup", (e) => {
         }
     }
     if (chname.value == ""){
-        bgName.innerText = "Jane Appleseed"
+        bgName.innerText = ogChname
     }
 })
 
@@ -77,7 +88,7 @@ cnum.addEventListener("keyup", (e) => {
         cnumTextEdit()
     }
     if (cnum.value == ""){
-        bgNum.innerText = "0000 0000 0000 0000"
+        bgNum.innerText = ogCnum
     }
     if (cnum.value.length == 16){
         errorCnum.innerText = ""
@@ -89,7 +100,7 @@ expmm.addEventListener("keyup", (e) => {
         expmmTextEdit()
     }
     if (expmm.value == ""){
-        bgMm.innerText = "00"
+        bgMm.innerText = ogExpmm
     }
     if (expmm.value.length == 2 && expmm.value !== "00"){
         errorExpmm.innerText = ""
@@ -101,7 +112,7 @@ expyy.addEventListener("keyup", (e) => {
         expyyTextEdit()
     }
     if (expyy.value == ""){
-        bgYy.innerText = "00"
+        bgYy.innerText = ogExpyy
     }
     if (expyy.value.length == 2 && expyy.value !== ""){
         if (expyy.value !== "card expired earlier this year" && expyy.value !== "card is expired"){
@@ -117,7 +128,7 @@ cvc.addEventListener("keyup", (e) => {
         cvcTextEdit()
     }
     if (cvc.value == ""){
-        bgCvc.innerText = "000"
+        bgCvc.innerText = ogCvc
     }
 })
 
@@ -126,7 +137,10 @@ cvc.addEventListener("keyup", (e) => {
 form.addEventListener("submit", (e) => {
     e.preventDefault()
     handleSubmit()
-    
+})
+
+confBtn.addEventListener("click", () => {
+    continueReset()
 })
 
 //! Functions
@@ -184,13 +198,49 @@ function submitSuccess() {
         console.log('ended');
         formContainer.classList.add('display-none');
         formContainer.classList.remove('disappear');
+        confContainer.classList.add('opacity-none')
         confContainer.classList.remove('display-none');
-        confContainer.classList.add('reappear')
-    });
+        confContainer.classList.add('reappear');
+    }, {once:true});
+    confContainer.addEventListener("animationend", () => {
+        confContainer.classList.remove('opacity-none');
+        confContainer.classList.remove('reappear');
+    }, {once:true});
     
     //TODO Confirmed page submit event to restart
 
+
 }
+
+function continueReset() {
+    confContainer.classList.add('disappear')
+    confContainer.addEventListener("animationend", () => {
+        console.log('continued');
+        confContainer.classList.add('display-none');
+        confContainer.classList.remove('disappear');
+        valueReset()
+        formContainer.classList.add('opacity-none');
+        formContainer.classList.remove('display-none');
+        formContainer.classList.add('reappear');
+    }, {once:true})
+    formContainer.addEventListener("animationend", () => {
+        formContainer.classList.remove('opacity-none');
+        formContainer.classList.remove('reappear');
+    }, {once:true})
+}
+
+ function valueReset() {
+    form.reset()
+    bgReset()
+ }
+
+ function bgReset() {
+    bgName.innerText = ogChname
+    bgNum.innerText = ogCnum
+    bgMm.innerText = ogExpmm
+    bgYy.innerText = ogExpyy
+    bgCvc.innerText = ogCvc
+ }
 
 // functions for background card animation
 
