@@ -28,16 +28,61 @@ body{
 
 body{
     display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+
 }
 
 aside{
-    width: 30%;
-    height: 100vh;
-    background-image: url(images/bg-main-desktop.png);
+    width: 100vw;
+    height: 15rem;
+    background-image: url(images/bg-main-mobile.png);
 }
 
 .sidebar{
-    display: none;
+    position:relative;
+    width: 100vw;
+}
+
+.card-front{
+    position: absolute;
+    width: 80vw;
+    aspect-ratio: 447/245;
+    top: 120%;
+    left: 5%;
+    z-index: 2;
+    background-image: url(images/bg-card-front.png);
+    background-size: contain;
+    border-radius: 0.5rem;
+}
+
+.card-back{
+    position: absolute;
+    width: 80vw;
+    aspect-ratio: 447/245;
+    top: 25%;
+    left: 15%;
+    background-image: url(images/bg-card-back.png);
+    background-size: contain;
+    border-radius: 0.5rem;
+}
+
+
+
+
+
+
+@media (min-width:700px) {
+    body{
+        flex-direction: row;
+    }
+    aside{
+        width: 30%;
+        height: 100vh;
+        background-image: url(images/bg-main-desktop.png);
+    }
 }
 
 
