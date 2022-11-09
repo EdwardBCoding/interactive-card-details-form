@@ -11,8 +11,8 @@
     --error: hsl(0, 100%, 66%);
     --gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
     --white: hsl(0, 0%, 100%);
-    --card-back: hsl(270, 3%, 87%);
-    --primary-color: hsl(279, 6%, 55%);
+    --light-gray: hsl(270, 3%, 87%);
+    --dark-gray: hsl(279, 6%, 55%);
     --dark-violet: hsl(278, 68%, 11%);
     --font: 'Space Grotesk', sans-serif;
 }
@@ -22,6 +22,16 @@
 body{
     font-family: var(--font);
     font-size: 18px;
+}
+
+label{
+    color: var(--dark-violet);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+input{
+    color: var(--light-gray);
 }
 
 /*! layout */
@@ -76,20 +86,61 @@ aside{
 
 main{
     height: 65vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    padding: 1rem;
 }
 
+.form-container{
+    max-width: 85vw;
+    padding-top: 1rem;
+}
 
+form > *{
+    padding: 0.5rem 0;
+}
+
+label{
+    margin: 1rem 0;
+}
+
+input{
+    border: 0.1rem solid;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    margin-top: 0.2rem ;
+    width: 100%;
+}
+
+.expcvc-container{
+    display: flex;
+    gap: 0.2rem;
+    width: 100%;
+}
+
+.exp-container{
+    max-width: 50%;
+}
+
+.exp-container> input{
+    max-width: 45%;
+    
+}
+
+.cvc-container{
+    max-width: 50%;
+}
 
 #submit-btn{
     color: var(--white);
     background-color: var(--dark-violet);
+    text-align: center;
     padding: 1rem 3rem;
-    border-radius: 1rem;
+    border-radius: 0.6rem;
+    margin-top: 1rem;
+
 }
 
 @media (min-width:700px) {

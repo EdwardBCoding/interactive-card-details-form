@@ -47,35 +47,45 @@
         name="cnum" 
         placeholder="e.g. 1234 5678 9123 0000" 
         maxlength="16"><br>
-        <p id="cnum-error" class="error"></p>
-        
-        <label for="exp">Exp. Date (MM/YY)</label><br>
-        <input 
-        type="text" 
-        id="expmm" 
-        name="expmm" 
-        placeholder="MM" 
-        maxlength="2"
-        pattern="[0-9]{2}">
-        <input 
-        type="text" 
-        id="expyy" 
-        name="expyy" 
-        placeholder="YY" 
-        maxlength="2"
-        pattern="[0-9]{2}"><br>
-        <span id="expmm-error" class="error"></span>
-        <span id="expyy-error" class="error"></span><br>
 
-        <label for="cvc">CVC</label><br>
-        <input 
-        type="text" 
-        id="cvc" 
-        name="cvc" 
-        placeholder="e.g. 123" 
-        maxlength="3"
-        pattern="[0-9]{3}">
-        <p id="cvc-error" class="error"></p>
+        <p id="cnum-error" class="error"></p>
+
+        <div class="expcvc-container">
+          <div class="exp-container">
+            <label for="exp">Exp. Date (MM/YY)</label>
+            <br>
+            <input
+            type="text"
+            id="expmm"
+            name="expmm"
+            placeholder="MM"
+            maxlength="2"
+            pattern="[0-9]{2}">
+            <input
+            type="text"
+            id="expyy"
+            name="expyy"
+            placeholder="YY"
+            maxlength="2"
+            pattern="[0-9]{2}">
+            <span id="expmm-error" class="error"></span>
+            <span id="expyy-error" class="error"></span>
+            <br>
+          </div>
+          <div class="cvc-container">
+            <label class="cvc" for="cvc">CVC</label><br>
+            <input
+            type="text"
+            id="cvc"
+            name="cvc"
+            placeholder="e.g. 123"
+            maxlength="3"
+            pattern="[0-9]{3}">
+            <p id="cvc-error" class="error"></p>
+          </div>
+        </div>
+
+        
         
         <input id="submit-btn" type="submit" value="Confirm">
 
