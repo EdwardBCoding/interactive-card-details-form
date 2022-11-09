@@ -37,8 +37,11 @@ body{
 
 aside{
     width: 100vw;
-    height: 15rem;
+    height: 35vh;
+    max-height: 15rem;
     background-image: url(images/bg-main-mobile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .sidebar{
@@ -49,6 +52,7 @@ aside{
 .card-front{
     position: absolute;
     width: 80vw;
+    max-width: 22rem;
     aspect-ratio: 447/245;
     top: 120%;
     left: 5%;
@@ -61,6 +65,7 @@ aside{
 .card-back{
     position: absolute;
     width: 80vw;
+    max-width: 22rem;
     aspect-ratio: 447/245;
     top: 25%;
     left: 15%;
@@ -69,10 +74,23 @@ aside{
     border-radius: 0.5rem;
 }
 
+main{
+    height: 65vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 
 
-
+#submit-btn{
+    color: var(--white);
+    background-color: var(--dark-violet);
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+}
 
 @media (min-width:700px) {
     body{
