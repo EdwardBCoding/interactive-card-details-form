@@ -39,6 +39,11 @@ body{
     
 }
 
+.card-back{
+    color: var(--white);
+    letter-spacing: 0.1rem;
+}
+
 label{
     color: var(--dark-violet);
     font-size: 0.8rem;
@@ -92,11 +97,16 @@ aside{
     border-radius: 0.5rem;
 }
 
+.card-front>img{
+    width: 4rem;
+    padding: 1rem 0 1.5rem 1rem;
+}
+
 .card-bottom{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80%;
+    height: 40%;
 }
 
 .card-bottom>*{
@@ -107,13 +117,18 @@ aside{
     position: absolute;
     width: clamp(30vw,17rem,80vw);
     aspect-ratio: 447/245;
-    transform: translateX(10vw) translateY(-1vh);
-    /* top: 25%;
-    left: 15%; */
+    transform: translateX(10vw) translateY(-1.8vh);
     background-image: url(images/bg-card-back.png);
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#card-back-cvc{
+    padding-top: 23%;
+    padding-right: 1.8rem;
 }
 
 main{
