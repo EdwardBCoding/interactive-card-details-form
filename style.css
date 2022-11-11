@@ -53,6 +53,11 @@ label{
 }
 
 input{
+    color: var(--dark-violet);
+    
+}
+
+::placeholder{
     color: var(--light-gray);
 }
 
@@ -148,12 +153,16 @@ main{
 }
 
 .form-container{
-    max-width: 85vw;
+    width: 85vw;
+    max-width: 25rem;
     padding-top: 1rem;
 }
 
-form > *{
-    padding: 0.5rem 0;
+.name-container,
+.number-container,
+.expcvc-container {
+    padding-top: 0.7rem;
+    margin-bottom: 0.5rem;
 }
 
 label{
@@ -166,22 +175,41 @@ input{
     padding: 0.5rem 0.5rem;
     margin-top: 0.2rem ;
     width: 100%;
+    border-color: var(--light-gray);
+}
+
+input:focus{
+    border-color: var(--dark-violet);
+}
+
+.input-error{
+    border-color: red;
 }
 
 .expcvc-container{
     display: flex;
-    gap: 0.2rem;
+    justify-content: space-around;
+    gap: 0.8rem;
     width: 100%;
 }
 
-.exp-container{
+/* TODO MAKE CONTAINERS EQUAL */
+
+.expcvc-container>div{
+    width: 50%;
+}
+
+.mmyy-container{
+    display: flex;
+    gap: 0.5rem;
+    
+
+}
+
+.mmyy-container>div{
     max-width: 50%;
 }
 
-.exp-container> input{
-    max-width: 45%;
-    
-}
 
 .cvc-container{
     max-width: 50%;
@@ -193,12 +221,13 @@ input{
     text-align: center;
     padding: 1rem 3rem;
     border-radius: 0.6rem;
-    margin-top: 1rem;
+    margin: 1.5rem 0;
 
 }
 
 .error{
-    padding: 0;
+    padding-top: 0.2rem;
+    position: absolute;
 }
 
 @media (min-width:700px) {
@@ -211,74 +240,6 @@ input{
         background-image: url(images/bg-main-desktop.png);
     }
 }
-
-
-/* 
-body{
-    font-size: 18px;
-    height: 100vh;
-    width: 100%;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: row;
-}
-
-aside{
-    height: 50%;
-    width: 100%;
-}
-
-.bg-gradient{
-    z-index: -1;
-    height: 100%;
-}
-
-.bg-gradient img{
-    width: 100%;
-    height: 18rem;
-}
-
-.sidebar{
-    color: white;
-}
-
-.card-front {
-    width: 300px;
-    z-index: -2;
-}
-
-.card-back{
-    width: 300px;
-    z-index: -3;
-}
-
-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-@media (min-width:700px) {
-    body{
-        flex-direction: column;
-    }
-    .bg-gradient img{
-        width: 30%;
-        height: 100%;
-    }
-    aside{
-        width: 30%;
-    }
-} */
-
-
-
-
-
-/* .confirmed{
-    
-} */
 
 /*! utility classes */
 

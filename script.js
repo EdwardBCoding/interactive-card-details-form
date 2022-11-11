@@ -69,13 +69,14 @@ cvc.addEventListener("keydown", (e) => {
     }
 })
 
-// edit background cards when there is a new input value
+// edit background cards when there is a new input value aswell as remove errors when corrected
 
 chname.addEventListener("keyup", (e) => {
     if (chname.value !== ""){
         chnameTextEdit()
         if (errorChname.value !== ""){
             errorChname.innerText = ""
+            chname.classList.remove('input-error')
         }
     }
     if (chname.value == ""){
@@ -92,6 +93,7 @@ cnum.addEventListener("keyup", (e) => {
     }
     if (cnum.value.length == 16){
         errorCnum.innerText = ""
+        cnum.classList.remove('input-error')
     }
 })
 
@@ -104,6 +106,7 @@ expmm.addEventListener("keyup", (e) => {
     }
     if (expmm.value.length == 2 && expmm.value !== "00"){
         errorExpmm.innerText = ""
+        expmm.classList.remove('input-error')
     }
 })
 
@@ -115,12 +118,14 @@ expyy.addEventListener("keyup", (e) => {
         bgYy.innerText = ogExpyy
     }
     if (expyy.value.length == 2 && expyy.value !== ""){
-        if (expyy.value !== "card expired earlier this year" && expyy.value !== "card is expired"){
-            errorExpyy.innerText = ""
-            //! I WAS HERE
-            //TODO: Rest of the error removals
+        console.log('THIS')
+        if (errorExpmm.value !== "Card expired earlier this year" && errorExpmm.value !== "Card is expired"){
+            console.log('THAT')
+            errorExpmm.innerText = ""
+            expyy.classList.remove('input-error')
         }
     }
+
 })
 
 cvc.addEventListener("keyup", (e) => {
@@ -129,6 +134,10 @@ cvc.addEventListener("keyup", (e) => {
     }
     if (cvc.value == ""){
         bgCvc.innerText = ogCvc
+    }
+    if (cvc.value.length == 3){
+        errorCvc.innerText = ""
+        cvc.classList.remove('input-error')
     }
 })
 
@@ -151,39 +160,48 @@ function handleSubmit() {
     
     if (chname.value == '' || chname.value == null) {
         errors.push('name required')
-        errorChname.innerText = 'name required'
+        errorChname.innerText = 'Name required'
+        chname.classList.add('input-error')
     }
     if (cnum.value.length < 16) {
         errors.push('card number incomplete')
-        errorCnum.innerText = 'card number incomplete'
+        errorCnum.innerText = 'Card number incomplete'
+        cnum.classList.add('input-error')
     }
     if (expmm.value.length < 2) {
-        errors.push('expiration month is too short')
-        errorExpmm.innerText = 'expiration month is too short'
+        errors.push('Too short')
+        errorExpmm.innerText = 'Too short'
+        expmm.classList.add('input-error')
     }
     if (expmm.value == '00') {
         errors.push('expiration month can not be 00')
-        errorExpmm.innerText = 'expiration month can not be 00'
+        errorExpmm.innerText = 'Can\'t be 00'
+        expmm.classList.add('input-error')
     }
     if (expyy.value.length < 2) {
-        errors.push('expiration year is too short')
-        errorExpyy.innerText = 'expiration year is too short'
+        errors.push('Too short')
+        errorExpyy.innerText = 'Too short'
+        expyy.classList.add('input-error')
+        
     }
     if (expyy.value <= 21 && expyy.value !== '' ) {
         errors.push('card is expired')
-        errorExpyy.innerText = 'card is expired'
+        errorExpmm.innerText = 'Card is expired'
+        expyy.classList.add('input-error')
     }
     if (expyy.value == 22 && expmm.value <= 10){
         errors.push('card expired earlier this year')
-        errorExpyy.innerText = 'card expired earlier this year'
+        errorExpmm.innerText = 'Card expired earlier this year'
+        expyy.classList.add('input-error')
     }
     if (cvc.value.length < 3) {
         errors.push('cvc is too short')
-        errorCvc.innerText = 'cvc is too short'
+        errorCvc.innerText = 'Needs 3 numbers'
+        cvc.classList.add('input-error')
     }
     console.log(errors)
     if (errors.length > 0) {
-        console.log('its fkd')
+        console.log('womp womp woomp')
     }
     if (errors.length == 0) {
         submitSuccess()
