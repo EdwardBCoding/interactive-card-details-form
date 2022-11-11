@@ -42,16 +42,23 @@ body{
 .card-back{
     color: var(--white);
     letter-spacing: 0.1rem;
+    font-size: 0.8rem;
 }
 
 label{
     color: var(--dark-violet);
     font-size: 0.8rem;
     text-transform: uppercase;
+    letter-spacing: 0.1rem;
 }
 
 input{
     color: var(--light-gray);
+}
+
+.error{
+    color: var(--error);
+    font-size: 0.8rem;
 }
 
 /*! layout */
@@ -127,7 +134,7 @@ aside{
 }
 
 #card-back-cvc{
-    padding-top: 23%;
+    padding-top: 24%;
     padding-right: 1.8rem;
 }
 
@@ -188,6 +195,10 @@ input{
     border-radius: 0.6rem;
     margin-top: 1rem;
 
+}
+
+.error{
+    padding: 0;
 }
 
 @media (min-width:700px) {
