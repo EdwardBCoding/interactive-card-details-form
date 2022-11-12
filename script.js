@@ -105,8 +105,22 @@ expmm.addEventListener("keyup", (e) => {
         bgMm.innerText = ogExpmm
     }
     if (expmm.value.length == 2 && expmm.value !== "00"){
-        errorExpmm.innerText = ""
-        expmm.classList.remove('input-error')
+        if (errorExpmm.innerText !== "Card expired"){
+            errorExpmm.innerText = ""
+            expmm.classList.remove('input-error')
+        }
+        if (errorExpmm.innerText == "Card expired"){
+            if (expmm.value >= 01 && expyy.value >= 23){
+                errorExpmm.innerText = ""
+                expmm.classList.remove('input-error')
+                expyy.classList.remove('input-error')
+            }
+            if (expmm.value > 10 && expyy.value == 22){
+                errorExpmm.innerText = ""
+                expmm.classList.remove('input-error')
+                expyy.classList.remove('input-error')
+            } 
+        }
     }
 })
 
@@ -118,13 +132,25 @@ expyy.addEventListener("keyup", (e) => {
         bgYy.innerText = ogExpyy
     }
     if (expyy.value.length == 2 && expyy.value !== ""){
-        console.log('THIS')
-        if (errorExpmm.value !== "Card expired earlier this year" && errorExpmm.value !== "Card is expired"){
-            console.log('THAT')
+        if (errorExpmm.innerText !== "Card expired"){
             errorExpmm.innerText = ""
             expyy.classList.remove('input-error')
         }
+        if (errorExpmm.innerText == "Card expired"){
+            if (expmm.value >= 01 && expyy.value >= 23){
+                errorExpmm.innerText = ""
+                expmm.classList.remove('input-error')
+                expyy.classList.remove('input-error')
+
+            }
+            if (expmm.value > 10 && expyy.value == 22){
+                errorExpmm.innerText = ""
+                expmm.classList.remove('input-error')
+                expyy.classList.remove('input-error')
+            } 
+        }
     }
+
 
 })
 
@@ -186,12 +212,14 @@ function handleSubmit() {
     }
     if (expyy.value <= 21 && expyy.value !== '' ) {
         errors.push('card is expired')
-        errorExpmm.innerText = 'Card is expired'
+        errorExpmm.innerText = 'Card expired'
+        expmm.classList.add('input-error')
         expyy.classList.add('input-error')
     }
     if (expyy.value == 22 && expmm.value <= 10){
         errors.push('card expired earlier this year')
-        errorExpmm.innerText = 'Card expired earlier this year'
+        errorExpmm.innerText = 'Card expired'
+        expmm.classList.add('input-error')
         expyy.classList.add('input-error')
     }
     if (cvc.value.length < 3) {
@@ -213,7 +241,6 @@ function submitSuccess() {
     console.log('dance youre good!')
     formContainer.classList.add('disappear')
     formContainer.addEventListener("animationend", () => {
-        console.log('ended');
         formContainer.classList.add('display-none');
         formContainer.classList.remove('disappear');
         confContainer.classList.add('opacity-none')
@@ -233,7 +260,6 @@ function submitSuccess() {
 function continueReset() {
     confContainer.classList.add('disappear')
     confContainer.addEventListener("animationend", () => {
-        console.log('continued');
         confContainer.classList.add('display-none');
         confContainer.classList.remove('disappear');
         valueReset()
