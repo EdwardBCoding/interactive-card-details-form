@@ -67,6 +67,23 @@ input{
     font-size: 0.8rem;
 }
 
+.confirmed-title{
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--dark-violet);
+    letter-spacing: 0.2rem;
+}
+
+.confimed-text{
+    color: var(--dark-gray)
+}
+
+.confirmed-btn{
+    background-color: var(--dark-violet);
+    color: var(--white);
+    text-align: center;
+}
+
 /*! layout */
 
 body{
@@ -242,8 +259,31 @@ input:focus{
 }
 
 .confirmed{
-    background-color: black;
-    /* TODO CONTINUE FROM HERE */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80vw;
+    max-width: 23rem;
+}
+
+.confirmed>img{
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.confirmed-title{
+    padding-bottom: 1rem;
+}
+
+.confimed-text{
+    padding-bottom: 3rem;
+}
+
+.confirmed-btn{
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
 }
 
 /*! media queries*/
@@ -362,13 +402,14 @@ input:focus{
 
 
 .attribution {
-    font-size: 11px;
+    font-size: 10px;
     text-align: center;
     position: fixed;
     bottom: 0.5%;
     width: 100%;
+    color: var(--dark-gray);
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: hsl(228, 18%, 56%);
 }

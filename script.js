@@ -254,9 +254,6 @@ function submitSuccess() {
         confContainer.classList.remove('reappear');
     }, {once:true});
     
-    //TODO Confirmed page submit event to restart
-
-
 }
 
 function continueReset() {
