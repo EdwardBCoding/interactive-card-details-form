@@ -28,11 +28,11 @@ const confBtn = document.getElementById('confirmed-btn');
 
 const qual = /[0-9]/ ;
 
-const ogChname = "Winry Rockbell"
+const ogChname = "Valerie Felicity Frizzle"
 const ogCnum = "0000 0000 0000 0000"
 const ogExpmm = "11"
-const ogExpyy = "69"
-const ogCvc = "456"
+const ogExpyy = "33"
+const ogCvc = "222"
 
 
 //! Listeners
