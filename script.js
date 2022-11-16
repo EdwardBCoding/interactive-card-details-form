@@ -86,7 +86,7 @@ chname.addEventListener("keyup", (e) => {
 
 cnum.addEventListener("keyup", (e) => {
     // TODO FIX THIS BITCH ASS BUG
-    let key = e.key
+    // let key = e.key
     numberSpacer(key)
     if (cnum.value !== ""){
         cnumTextEdit()
@@ -291,13 +291,13 @@ function continueReset() {
 
  // function to add more space to the credit card numbers
 
- function numberSpacer() {
-    console.log(key)
-    if (cnum.value.length % 4 == 0 && cnum.value.length !== 0){
-        console.log('omg')
-        cnum.value = cnum.value + " "
-    }
- }
+//  function numberSpacer() {
+//     console.log(key)
+//     if (cnum.value.length % 4 == 0 && cnum.value.length !== 0){
+//         console.log('omg')
+//         cnum.value = cnum.value + " "
+//     }
+//  }
 
 // functions for background card animation
 
