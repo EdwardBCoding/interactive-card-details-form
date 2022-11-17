@@ -93,7 +93,7 @@ cnum.addEventListener("keyup", (e) => {
     if (cnum.value == ""){
         bgNum.innerText = ogCnum
     }
-    if (cnum.value.length == 16){
+    if (cnum.value.length == 19){
         errorCnum.innerText = ""
         cnum.classList.remove('input-error')
     }
@@ -133,9 +133,9 @@ expyy.addEventListener("keyup", (e) => {
     if (expyy.value == ""){
         bgYy.innerText = ogExpyy
     }
-    if (expyy.value.length == 2 && expyy.value !== ""){
+    if (expyy.value.length == 2){
         if (errorExpmm.innerText !== "Card expired"){
-            errorExpmm.innerText = ""
+            errorExpyy.innerText = ""
             expyy.classList.remove('input-error')
         }
         if (errorExpmm.innerText == "Card expired"){
@@ -191,7 +191,7 @@ function handleSubmit() {
         errorChname.innerText = 'Name required'
         chname.classList.add('input-error')
     }
-    if (cnum.value.length < 16) {
+    if (cnum.value.length < 19) {
         errors.push('card number incomplete')
         errorCnum.innerText = 'Card number incomplete'
         cnum.classList.add('input-error')
