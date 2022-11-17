@@ -296,10 +296,6 @@ function continueReset() {
                 cnum.value = cnum.value + " "
             }
     }
-    // if (cnum.value.length % 4 == 0 && cnum.value.length !== 0){
-    //     console.log('omg')
-    //     cnum.value = cnum.value + " "
-    // }
  }
 
 // functions for background card animation
@@ -323,8 +319,6 @@ function expyyTextEdit () {
 function cvcTextEdit () {
     bgCvc.innerText = cvc.value
 }
-
-// functions for errors on submit
 
 // function chnameErrorEdit () {
 //     bgName.innerText = chname.value
