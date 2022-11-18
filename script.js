@@ -45,6 +45,7 @@ cnum.addEventListener("keydown", (e) => {
     let key = e.key;
     if (qual.test(key) == false && key != "Backspace") {
         e.preventDefault();
+        return false
     }
 })
 
@@ -52,6 +53,7 @@ expmm.addEventListener("keydown", (e) => {
     let key = e.key;
     if (qual.test(key) == false && key != "Backspace") {
         e.preventDefault();
+        return false
     }
 })
 
@@ -59,6 +61,7 @@ expyy.addEventListener("keydown", (e) => {
     let key = e.key;
     if (qual.test(key) == false && key != "Backspace") {
         e.preventDefault();
+        return false
     }
 })
 
@@ -66,6 +69,7 @@ cvc.addEventListener("keydown", (e) => {
     let key = e.key;
     if (qual.test(key) == false && key != "Backspace") {
         e.preventDefault();
+        return false
     }
 })
 
