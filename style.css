@@ -413,3 +413,7 @@ input:focus{
 .attribution a {
     color: hsl(228, 18%, 56%);
 }
+
+.warning{
+    display: none;
+}

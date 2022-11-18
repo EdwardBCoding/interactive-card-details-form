@@ -50,7 +50,8 @@
           id="cnum"
           name="cnum"
           placeholder="e.g. 1234 5678 9123 0000"
-          maxlength="19"><br>
+          maxlength="19"
+          pattern="\d"><br>
           <span id="cnum-error" class="error"></span>
         </div>
 
@@ -61,20 +62,22 @@
             <div class="mmyy-container">
               <div class="mm-container">
                 <input
-                type="text"
+                type="tel"
                 id="expmm"
                 name="expmm"
                 placeholder="MM"
-                maxlength="2"><br>
+                maxlength="2"
+                pattern="\d"><br>
                 <span id="expmm-error" class="error"></span>
               </div>
               <div class="yy-container">
                 <input
-                type="text"
+                type="tel"
                 id="expyy"
                 name="expyy"
                 placeholder="YY"
-                maxlength="2"><br>
+                maxlength="2"
+                pattern="\d"><br>
                 <span id="expyy-error" class="error"></span>
               </div>
             </div>
@@ -82,11 +85,12 @@
           <div class="cvc-container">
             <label class="cvc" for="cvc">CVC</label><br>
             <input
-            type="text"
+            type="tel"
             id="cvc"
             name="cvc"
             placeholder="e.g. 123"
-            maxlength="3"><br>
+            maxlength="3"
+            pattern="\d"><br>
             <span id="cvc-error" class="error"></span>
           </div>
         </div>
